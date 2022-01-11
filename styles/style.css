@@ -28,3 +28,7 @@ body {
   fill: none;
   stroke: steelblue;
 }
+
+#apple-stock-chart-2 .line {
+  stroke: green;
+}
