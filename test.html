@@ -10,19 +10,36 @@
 </head>
 <body>
 
-	<!--apple stock chart-->
+	<!--apple stock chart, using v3-->
  	<div id='apple-stock-chart-container'>
     	<h1> Apple Stock Chart </h1>
     	<p>The following chart was adapted from Mike Bostock.</p>
   	</div>
-  <!-- link js -->
-  <script src="//d3js.org/d3.v3.min.js"></script>
-  <script src="scripts/chart.js"></script>
 
-
-  	<!--second chart-->
+  	<!--second chart, using v4-->
 	<svg id = "test" width="800" height="500"></svg>
-	<script src="https://d3js.org/d3.v4.min.js"></script>
+
+
+	<!-- link js -->
+  	<script src="//d3js.org/d3.v3.min.js"></script>
+  	<script>
+  		var d3v3 = window.d3;
+  		window.d3 = null;
+  	</script>
+  	<script src="https://d3js.org/d3.v4.min.js"></script>
+
+	<div>d3v4 variable version: <span id="d3v4VarVer"></span></div>
+	<div>d3v3 variable version: <span id="d3v3VarVer"></span></div>
+ 
+	<script>
+    	document.getElementById("d3VarVer").innerText = d3v4.version;
+    	document.getElementById("d3v3VarVer").innerText = d3v3.version;
+	</script>
+
+	<!--this chart does not load-->
+	<script src="scripts/chart.js"></script>
+
+	<!--this chart does load-->  
 	<script src="scripts/test.js"></script>
 </body>
 </html>
