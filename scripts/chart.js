@@ -1,4 +1,4 @@
-function drawLineChart(){
+function drawLineChart(attrId){
   var margin = {top: 20, right: 50, bottom: 30, left: 50},
       width = 960 - margin.left - margin.right,
       height = 500 - margin.top - margin.bottom;
@@ -26,7 +26,7 @@ function drawLineChart(){
       .x(function(d) { return x(d.date); })
       .y(function(d) { return y(d.close); });
 
-  var svg = d3.select("#apple-stock-chart").append("svg")
+  var svg = d3.select(attrId).append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
       .append("g")
@@ -100,3 +100,7 @@ function drawLineChart(){
     }
   });
 }
+
+drawLineChart('#apple-stock-chart')
+
+drawLineChart('#apple-stock-chart-2')
